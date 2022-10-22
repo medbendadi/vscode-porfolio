@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/webhook": "^2.0.0",
     "gsap": "^3.11.3",
     "next": "12.3.1",
     "next-sanity": "^1.0.0",
