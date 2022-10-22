@@ -3,5 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 }
-
-module.exports = nextConfig
+const images = {
+  domains: ['cdn.sanity.io', "avatars.githubusercontent.com"],
+}
+module.exports = { nextConfig, images }
