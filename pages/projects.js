@@ -29,7 +29,7 @@ const projects = ({ projects }) => {
 
 export default projects
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
    const query = encodeURIComponent(`*[ _type == "projects" ]`);
    const url = `${process.env.SANITY_URL}query=${query}`;
    const data = await fetch(url).then((res) => res.json());
