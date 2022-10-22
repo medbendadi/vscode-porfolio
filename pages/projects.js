@@ -39,14 +39,14 @@ export const getStaticProps = async (context) => {
          props: {
             projects: [],
          },
-         revalidate: 10,
+         revalidate: 1,
       };
    } else {
       return {
          props: {
             projects,
          },
-         revalidate: 10,
+         revalidate: 1,
       };
    }
 };
