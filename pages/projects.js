@@ -5,6 +5,7 @@ import Meta from '../components/Meta'
 import CustomCursor from '../components/CustomCursor'
 
 const projects = ({ projects }) => {
+   console.log(projects);
 
    return (
       <>
@@ -34,7 +35,6 @@ export const getStaticProps = async (context) => {
    const url = `${process.env.SANITY_URL}query=${query}`;
    const data = await fetch(url).then((res) => res.json());
    const projects = data.result;
-   console.log(projects);
    if (!projects || !projects.length === 0) {
       return {
          props: {
