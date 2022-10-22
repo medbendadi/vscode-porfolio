@@ -3,10 +3,11 @@ import Layout from "../components/Layout";
 import Meta from "../components/Meta";
 import "../styles/globals.css";
 import "../styles/themes.css";
-
+import { gsap } from 'gsap'
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
+    gsap.registerPlugin()
     if (localStorage.getItem("theme")) {
       document.documentElement.setAttribute(
         "data-theme",
