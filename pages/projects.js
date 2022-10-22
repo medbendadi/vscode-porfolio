@@ -44,9 +44,9 @@ export const getStaticProps = async (context) => {
    // } else {
    return {
       props: {
-         projects,
+         projects
       },
-      revalidate: 1,
-   };
+      revalidate: 60
+   }
    // }
 };
