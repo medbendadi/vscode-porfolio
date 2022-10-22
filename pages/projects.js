@@ -34,18 +34,17 @@ export const getStaticProps = async (context) => {
    const url = `${process.env.SANITY_URL}query=${query}`;
    const data = await fetch(url).then((res) => res.json());
    const projects = data.result;
-   // if (!projects || !projects.length === 0) {
-   //    return {
-   //       props: {
-   //          projects: [],
-   //       },
-   //       revalidate: 1,
-   //    };
-   // } else {
-   return {
-      props: {
-         projects
-      },
+   if (!projects || !projects.length === 0) {
+      return {
+         props: {
+            projects: [],
+         }
+      };
+   } else {
+      return {
+         props: {
+            projects
+         },
+      }
    }
-   // }
 };
