@@ -6,7 +6,7 @@ const contactItems = [
    {
       social: 'website',
       link: 'bendadi.me',
-      href: 'https://bendadi.me',
+      href: 'https://medbendadi.vercel.app/',
    },
    {
       social: 'email',
