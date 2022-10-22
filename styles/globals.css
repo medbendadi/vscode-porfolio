@@ -79,10 +79,10 @@ a, button{
   background: rgba(6, 182, 212, 0.25);
 }
 
-.react-query {
+.react-query, .sanity {
   border: 2px solid rgb(255, 65, 84);
 }
-.react-query:hover {
+.react-query:hover, .sanity:hover {
   background: rgba(255, 65, 84, 0.25);
 }
 
