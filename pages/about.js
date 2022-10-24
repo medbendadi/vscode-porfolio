@@ -1,8 +1,10 @@
 import React from 'react'
-import Meta from '../components/Meta'
+import dynamic from 'next/dynamic'
 
-import CustomCursor from '../components/CustomCursor'
-import ButtonWithAnimation from '../components/ButtonwithAnimation'
+
+const Meta = dynamic(() => import('../components/Meta'))
+const CustomCursor = dynamic(() => import('../components/CustomCursor'))
+const ButtonWithAnimation = dynamic(() => import('../components/ButtonwithAnimation'))
 
 const about = () => {
    return (

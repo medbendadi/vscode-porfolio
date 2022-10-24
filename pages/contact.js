@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import ContactCode from '../components/ContactCode';
+import dynamic from 'next/dynamic';
 import styles from '../styles/ContactPage.module.css'
-import Meta from '../components/Meta'
-import CustomCursor from '../components/CustomCursor'
+
+
+const ContactCode = dynamic(() => import('../components/ContactCode'))
+const Meta = dynamic(() => import('../components/Meta'))
+const CustomCursor = dynamic(() => import('../components/CustomCursor'))
 
 const ContactPage = () => {
    const [name, setName] = useState('');

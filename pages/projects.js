@@ -1,8 +1,11 @@
 import React from 'react'
-import ProjectCard from '../components/ProjectCard'
 import styles from '../styles/ProjectsPage.module.css'
-import Meta from '../components/Meta'
-import CustomCursor from '../components/CustomCursor'
+
+import dynamic from 'next/dynamic'
+
+const ProjectCard = dynamic(() => import('../components/ProjectCard'))
+const Meta = dynamic(() => import('../components/Meta'))
+const CustomCursor = dynamic(() => import('../components/CustomCursor'))
 
 const projects = ({ projects }) => {
    console.log(projects);

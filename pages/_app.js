@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import Meta from "../components/Meta";
 import "../styles/globals.css";
 import "../styles/themes.css";
 import { gsap } from 'gsap';
-// import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+import dynamic from "next/dynamic";
+
+const Layout = dynamic(() => import('../components/Layout'))
+const Meta = dynamic(() => import('../components/Meta'))
+
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {

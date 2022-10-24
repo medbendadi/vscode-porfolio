@@ -1,9 +1,11 @@
-import WatchIcon from '../components/icons/WatchIcon';
-import ForkIcon from '../components/icons/ForkIcon';
-import StarIcon from '../components/icons/StarIcon';
-import GithubIcon from '../components/icons/GithubIcon';
-import LinkIcon from '../components/icons/LinkIcon';
+import dynamic from 'next/dynamic';
 import styles from '../styles/RepoCard.module.css';
+
+const WatchIcon = dynamic(() => import('../components/icons/WatchIcon'))
+const ForkIcon = dynamic(() => import('../components/icons/ForkIcon'))
+const StarIcon = dynamic(() => import('../components/icons/StarIcon'))
+const GithubIcon = dynamic(() => import('../components/icons/GithubIcon'))
+const LinkIcon = dynamic(() => import('../components/icons/LinkIcon'))
 
 
 

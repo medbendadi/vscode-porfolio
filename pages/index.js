@@ -1,7 +1,9 @@
-import ButtonWithAnimation from '../components/ButtonwithAnimation';
 import styles from '../styles/HomePage.module.css';
-import Meta from '../components/Meta'
-import CustomCursor from '../components/CustomCursor'
+import dynamic from 'next/dynamic';
+
+const ButtonWithAnimation = dynamic(() => import('../components/ButtonwithAnimation'))
+const Meta = dynamic(() => import('../components/Meta'))
+const CustomCursor = dynamic(() => import('../components/CustomCursor'))
 
 export default function HomePage() {
   return (
