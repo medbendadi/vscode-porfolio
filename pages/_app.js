@@ -8,6 +8,9 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      disableReactDevTools();
+    }
     gsap.registerPlugin()
     if (localStorage.getItem("theme")) {
       document.documentElement.setAttribute(
@@ -17,9 +20,6 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
-  if (process.env.NODE_ENV === 'production') {
-    disableReactDevTools();
-  }
   return (
     <Layout>
       <Meta title={`MedBendadi | ${pageProps.title}`} />
