@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
                src={urlFor(project.image).url()}
                height={300}
                width={600}
-               alt={project.name}
+               alt={project.name || project.description}
             />
          </div>
          <div className={styles.content}>
