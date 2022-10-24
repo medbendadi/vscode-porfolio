@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 import styles from '../styles/ProjectCard.module.css'
 
 import { client } from '../pages/api/contact'
