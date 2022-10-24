@@ -4,13 +4,13 @@ import Meta from "../components/Meta";
 import "../styles/globals.css";
 import "../styles/themes.css";
 import { gsap } from 'gsap';
-import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+// import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      disableReactDevTools();
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   disableReactDevTools();
+    // }
     gsap.registerPlugin()
     if (localStorage.getItem("theme")) {
       document.documentElement.setAttribute(
