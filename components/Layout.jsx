@@ -5,7 +5,7 @@ import Explorer from './Explorer'
 import Tabsbar from './Tabsbar'
 import Bottombar from './Bottombar'
 // import { disableReactDevTools } from '@fvilers/disable-react-devtools';
-require('disable-react-devtools');
+require('@fvilers/disable-react-devtools');
 const Layout = ({ children }) => {
 
   // if (process.env.NODE_ENV === 'production') {
