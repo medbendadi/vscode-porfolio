@@ -5,7 +5,6 @@ const CustomCursor = () => {
   useEffect(() => {
     var cursor = document.querySelector(".custom-cursor");
     var links = document.querySelectorAll("a");
-    var buttons = document.querySelectorAll("button");
     var buttonsClass = document.querySelectorAll(".cursor-button");
     var initCursor = false;
 

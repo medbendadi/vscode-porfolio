@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import ButtonWithAnimation from '../components/ButtonwithAnimation';
 import styles from '../styles/HomePage.module.css';
 import Meta from '../components/Meta'
 import CustomCursor from '../components/CustomCursor'
 
-export default function HomePage({ posts }) {
+export default function HomePage() {
   return (
     <>
       <Meta title='Home' />
