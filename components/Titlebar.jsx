@@ -8,8 +8,9 @@ const Titlebar = () => {
          <Image
             src="/images/vscode_icon.svg"
             alt='vscode icon'
-            width={15}
-            height={15}
+            width='15px'
+            // width={15}
+            height='15px'
             className={styles.icon}
          />
          <div className={styles.items}>
