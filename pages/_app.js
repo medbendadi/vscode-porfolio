@@ -3,7 +3,8 @@ import Layout from "../components/Layout";
 import Meta from "../components/Meta";
 import "../styles/globals.css";
 import "../styles/themes.css";
-import { gsap } from 'gsap'
+import { gsap } from 'gsap';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  if (process.env.NODE_ENV === 'production') {
+    disableReactDevTools();
+  }
   return (
     <Layout>
       <Meta title={`MedBendadi | ${pageProps.title}`} />
