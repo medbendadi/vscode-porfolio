@@ -5,6 +5,14 @@ import Explorer from './Explorer'
 import Tabsbar from './Tabsbar'
 import Bottombar from './Bottombar'
 const Layout = ({ children }) => {
+  useEffect(() => {
+    if (window) {
+      if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
+        __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () { };
+      }
+    }
+  }, [])
+
   return (
     <>
       <Titlebar />

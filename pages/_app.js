@@ -16,9 +16,6 @@ const Meta = dynamic(() => import('../components/Meta'))
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
-      __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () { };
-    }
     gsap.registerPlugin()
     if (localStorage.getItem("theme")) {
       document.documentElement.setAttribute(
