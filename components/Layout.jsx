@@ -4,8 +4,11 @@ import Sidebar from './Sidebar'
 import Explorer from './Explorer'
 import Tabsbar from './Tabsbar'
 import Bottombar from './Bottombar'
+import { disableReactDevTools } from '@fvilers/disable-react-devtools'
+if (process.env.NODE_ENV === 'production') {
+  disableReactDevTools();
+}
 const Layout = ({ children }) => {
-
   return (
     <>
       <Titlebar />
