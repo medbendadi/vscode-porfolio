@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import Explorer from './Explorer'
 import Tabsbar from './Tabsbar'
 import Bottombar from './Bottombar'
+import { useEffect } from 'react'
 const Layout = ({ children }) => {
   useEffect(() => {
     if (window) {
