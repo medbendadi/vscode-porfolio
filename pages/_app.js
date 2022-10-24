@@ -3,13 +3,17 @@ import "../styles/globals.css";
 import "../styles/themes.css";
 import { gsap } from 'gsap';
 import dynamic from "next/dynamic";
-import { disableReactDevTools } from '@fvilers/disable-react-devtools'
+// import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 
 const Layout = dynamic(() => import('../components/Layout'))
 const Meta = dynamic(() => import('../components/Meta'))
 
-if (process.env.REACT_APP_NODE_ENV === 'production') {
-  disableReactDevTools();
+// if (process.env.REACT_APP_NODE_ENV === 'production') {
+//   disableReactDevTools();
+// }
+
+if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
+  __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () { };
 }
 
 function MyApp({ Component, pageProps }) {
