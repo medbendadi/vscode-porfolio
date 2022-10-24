@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import GitHubCalendar from 'react-github-calendar';
 import styles from '../styles/GithubPage.module.css';
 import dynamic from 'next/dynamic';
