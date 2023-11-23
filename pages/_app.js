@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import "../styles/themes.css";
 import { gsap } from 'gsap';
 import dynamic from "next/dynamic";
+import { Analytics } from '@vercel/analytics/react';
 // import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 
 const Layout = dynamic(() => import('../components/Layout'))
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Meta title={`MedBendadi | ${pageProps.title}`} />
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   );
 }
