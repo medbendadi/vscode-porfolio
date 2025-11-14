@@ -58,34 +58,80 @@ const github = ({ repos, user }) => {
 }
 
 export async function getStaticProps() {
-   const userRes = await fetch(
+  try {
+    // Fetch user data
+    const userRes = await fetch(
       `https://api.github.com/users/${process.env.GITHUB_USERNAME}`,
       {
-         headers: {
-            Authorization: `token ${process.env.GITHUB_API_KEY}`,
-         },
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
       }
-   );
-   const user = await userRes.json();
+    );
 
-   const repoRes = await fetch(
+    // Check user response
+    if (!userRes.ok) {
+      console.error('❌ GitHub user fetch failed:', userRes.status, userRes.statusText);
+      throw new Error(`GitHub user fetch failed: ${userRes.status}`);
+    }
+
+    const user = await userRes.json();
+
+    // Fetch repositories
+    const repoRes = await fetch(
       `https://api.github.com/users/${process.env.GITHUB_USERNAME}/repos?per_page=100`,
       {
-         headers: {
-            Authorization: `token ${process.env.GITHUB_API_KEY}`,
-         },
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
       }
-   );
-   let repos = await repoRes.json();
-   repos = repos
-      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
-      .slice(0, 6);
+    );
 
-   return {
-      props: { title: 'GitHub', repos, user },
+    // Check repo response
+    if (!repoRes.ok) {
+      console.error('❌ GitHub repo fetch failed:', repoRes.status, repoRes.statusText);
+      throw new Error(`GitHub repo fetch failed: ${repoRes.status}`);
+    }
+
+    let repos = await repoRes.json();
+
+    // Ensure repos is an array before sorting
+    if (!Array.isArray(repos)) {
+      console.error('❌ GitHub repos response is not an array:', repos);
+      repos = [];
+    } else {
+      repos = repos
+        .sort(
+          (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        )
+        .slice(0, 6);
+    }
+
+    // ✅ Return valid props
+    return {
+      props: {
+        title: 'GitHub',
+        repos,
+        user,
+      },
       revalidate: 10,
-   };
+    };
+  } catch (error) {
+    // Catch any network or parsing errors
+    console.error('🔥 Error fetching GitHub data:', error);
+
+    // ✅ Return fallback props instead of failing build
+    return {
+      props: {
+        title: 'GitHub',
+        repos: [],
+        user: {},
+      },
+      revalidate: 10,
+    };
+  }
 }
+
 
 
 export default github
